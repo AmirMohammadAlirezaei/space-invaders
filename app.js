@@ -81,6 +81,11 @@ function moveInvaders() {
   }
 
   draw();
+
+  if (squares[currentShooterIndex].classList.contains("invader")) {
+    resultDisplay.innerHTML = "GAME OVER";
+    clearInterval(invadersId);
+  }
 }
 
 invadersId = setInterval(moveInvaders, 600);
