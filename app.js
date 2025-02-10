@@ -95,7 +95,7 @@ function moveInvaders() {
 
 invadersId = setInterval(moveInvaders, 600);
 
-function shoot() {
+function shoot(e) {
   let laserId;
   let currentLaserIndex = currentShooterIndex;
 
@@ -104,4 +104,11 @@ function shoot() {
     currentLaserIndex -= width;
     squares[currentLaserIndex].classList.add("laser");
   }
+  switch (e.key) {
+    case "ArrowUp":
+      laserId = setInterval(moveLaser, 100);
+      break;
+  }
 }
+
+document.addEventListener("keydown", shoot);
