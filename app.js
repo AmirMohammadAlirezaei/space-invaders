@@ -60,9 +60,14 @@ function moveInvaders() {
 
   remove();
 
-  for (let i = 0; i < alienInvaders.length; i++) {
-    alienInvaders[i] += 1;
+  if (rightEdge && isGoingRight) {
+    for (let i = 0; i < alienInvaders.length; i++) {
+      alienInvaders[i] += width + 1;
+      direction = -1;
+      isGoingRight = false;
+    }
   }
+
   draw();
 }
 
