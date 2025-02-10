@@ -4,4 +4,5 @@ const width = 15;
 
 for (let i = 0; i < width * width; i++) {
   const squares = document.createElement("div");
+  hrid.appendChild(square);
 }
