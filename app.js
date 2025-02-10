@@ -115,16 +115,20 @@ function shoot(e) {
       );
       clearInterval("laserId");
 
-      const aliensRemoved = alienInvaders.indexOf(currentLaserIndex);
-      aliensRemoved.push(aliensRemoved);
+      const alienRemoved = alienInvaders.indexOf(currentLaserIndex);
+      aliensRemoved.push(alienRemoved);
       results++;
       resultDisplay.innerHTML = results;
+      console.log(aliensRemoved);
     }
   }
-  switch (e.key) {
-    case "ArrowUp":
-      laserId = setInterval(moveLaser, 100);
-      break;
+  // switch (e.key) {
+  //   case "ArrowUp":
+  //     laserId = setInterval(moveLaser, 100);
+  //     break;
+  // }
+  if (e.key === "ArrowUp") {
+    laserId = setInterval(moveLaser, 100);
   }
 }
 
