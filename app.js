@@ -9,7 +9,7 @@ let direction = 1;
 
 for (let i = 0; i < width * width; i++) {
   const square = document.createElement("div");
-  square.id = i;
+
   grid.appendChild(square);
 }
 
@@ -101,5 +101,7 @@ function shoot() {
 
   function moveLaser() {
     squares[currentLaserIndex].classList.remove("laser");
+    currentLaserIndex -= width;
+    squares[currentLaserIndex].classList.add("laser");
   }
 }
