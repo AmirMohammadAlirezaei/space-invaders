@@ -1,11 +1,12 @@
 const grid = document.querySelector(".grid");
 const resultDisplay = document.querySelector(".results");
 const width = 15;
-const aliensRemoveed = [];
+const aliensRemoved = [];
 let invadersId;
 let currentShooterIndex = 202;
 let isGoingRight = true;
 let direction = 1;
+let results = 0;
 
 for (let i = 0; i < width * width; i++) {
   const square = document.createElement("div");
@@ -23,7 +24,7 @@ const alienInvaders = [
 
 function draw() {
   for (let i = 0; i < alienInvaders.length; i++) {
-    if (!aliensRemoveed.includes(i)) {
+    if (!aliensRemoved.includes(i)) {
       squares[alienInvaders[i]].classList.add("invader");
     }
   }
@@ -113,6 +114,11 @@ function shoot(e) {
         300
       );
       clearInterval("laserId");
+
+      const aliensRemoved = alienInvaders.indexOf(currentLaserIndex);
+      aliensRemoved.push(aliensRemoved);
+      results++;
+      resultDisplay.innerHTML = results;
     }
   }
   switch (e.key) {
