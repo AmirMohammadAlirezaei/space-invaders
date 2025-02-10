@@ -86,6 +86,11 @@ function moveInvaders() {
     resultDisplay.innerHTML = "GAME OVER";
     clearInterval(invadersId);
   }
+
+  if (alienInvaders.length === alienInvaders.length) {
+    resultDisplay.innerHTML = "YOU WIN";
+    clearInterval(invadersId);
+  }
 }
 
 invadersId = setInterval(moveInvaders, 600);
