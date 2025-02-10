@@ -88,7 +88,7 @@ function moveInvaders() {
     clearInterval(invadersId);
   }
 
-  if (alienInvaders.length === alienInvaders.length) {
+  if (aliensRemoved.length === alienInvaders.length) {
     resultDisplay.innerHTML = "YOU WIN";
     clearInterval(invadersId);
   }
