@@ -2,6 +2,7 @@ const grid = document.querySelector(".grid");
 const resultDisplay = document.querySelector(".results");
 const width = 15;
 const aliensRemoveed = [];
+let invadersId;
 
 let currentShooterIndex = 202;
 
@@ -62,3 +63,5 @@ function moveInvaders() {
     alienInvaders[i] += 1;
   }
 }
+
+invadersId = setInterval(moveInvaders, 600);
