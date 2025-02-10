@@ -2,12 +2,13 @@ const grid = document.querySelector(".grid");
 const resultDisplay = document.querySelector(".results");
 const width = 15;
 const aliensRemoveed = [];
+
 let currentShooterIndex = 202;
 
 for (let i = 0; i < width * width; i++) {
-  const squares = document.createElement("div");
-  squares.id = i;
-  grid.appendChild(squares);
+  const square = document.createElement("div");
+  square.id = i;
+  grid.appendChild(square);
 }
 
 const squares = Array.from(document.querySelectorAll(".grid div"));
@@ -29,10 +30,10 @@ draw();
 
 squares[currentShooterIndex].classList.add("shooter");
 
-function moveShooter() {
+function moveShooter(e) {
   squares[currentShooterIndex].classList.remove("shooter");
   switch (e.key) {
-    case "arrowLeft":
+    case "ArrowLeft":
       if (currentShooterIndex % width !== 0) currentShooterIndex -= 1;
       break;
   }
