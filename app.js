@@ -16,5 +16,7 @@ const alienInvaders = [
 ];
 
 function draw() {
-  for (let i = 0; i < alienInvaders.length; i++) {}
+  for (let i = 0; i < alienInvaders.length; i++) {
+    squares[alienInvaders[i]];
+  }
 }
