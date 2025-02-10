@@ -3,8 +3,9 @@ const resultDisplay = document.querySelector(".results");
 const width = 15;
 const aliensRemoveed = [];
 let invadersId;
-
 let currentShooterIndex = 202;
+let isGoingRight = true;
+let direction = 1;
 
 for (let i = 0; i < width * width; i++) {
   const square = document.createElement("div");
@@ -62,6 +63,7 @@ function moveInvaders() {
   for (let i = 0; i < alienInvaders.length; i++) {
     alienInvaders[i] += 1;
   }
+  draw();
 }
 
 invadersId = setInterval(moveInvaders, 600);
